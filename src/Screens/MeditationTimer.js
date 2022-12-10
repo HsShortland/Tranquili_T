@@ -12,18 +12,10 @@ export default function MeditationTimer() {
     console.log(drawerStatus);
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Meditation Timer</Text>
-            <Text style={SVGAnimatedLengthList.time}>Hello</Text>
+            <Text style={styles.time}>Hello</Text>
             <StatusBar style="auto" />
     </View>
 );
 };
 
 
-const styles = StyleSheet.create({
-    time: {
-        color: '#fff',
-        textAlign: 'center',
-        fontSize: 30,
-    },
-})
