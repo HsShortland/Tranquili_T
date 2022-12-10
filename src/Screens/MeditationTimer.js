@@ -6,6 +6,7 @@ import styles from '../components/ReusableStyleSheet';
 import BackgroundTimer from 'react-native-background-timer';
 import React, {useEffect, useState} from 'react';
 
+
 export default function MeditationTimer() {
     const nav = useNavigation();
     const drawerStatus = useDrawerStatus();
@@ -56,17 +57,7 @@ export default function MeditationTimer() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.time}>
-                {clockify().displayHours} Hours 
-                {clockify().displayMins} Mins 
-                {clockify().displaySeconds} Secs 
-                </Text>
-
-            <Button 
-            title="Start/Stop" 
-            onPress={() => setTimerOn((current) => !current)}>
-
-            </Button>
+            
             <StatusBar style="auto" />
         </View>
     );
