@@ -13,6 +13,7 @@ export default function MeditationTimer() {
     return (
         <View style={styles.container}>
             <Text style={styles.time}>Hello</Text>
+            <Button title="Start/Stop"></Button>
             <StatusBar style="auto" />
     </View>
 );
