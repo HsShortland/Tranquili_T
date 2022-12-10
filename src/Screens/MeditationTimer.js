@@ -3,8 +3,8 @@ import { StyleSheet, Text, Button, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDrawerStatus } from '@react-navigation/drawer';
 import styles from '../components/ReusableStyleSheet';
-import BackgroundTimer from 'react-native-background-timer';
 import React, {useEffect, useState} from 'react';
+import Timer from '../components/timer'
 
 
 
@@ -13,61 +13,38 @@ export default function MeditationTimer() {
     const drawerStatus = useDrawerStatus();
     console.log(drawerStatus);
 
-    const [secondsLeft, setSecondsLeft] = useState(601);
-    const [timerOn, setTimerOn] = useState(false);
-
-    useEffect(() => {
-        if (timerOn) startTimer();
-        else BackgroundTimer.stopBackgroundTimer();
+    const [timerClicked, setTimerClicked] = useState(false);
+    const [time, setTime] = useState(0);
     
-        return () => {
-            BackgroundTimer.stopBackgroundTimer();
-        };
-    }, [timerOn]);
-
-    useEffect(() => {
-        if (secondsLeft === 0) {
-            BackgroundTimer.stopBackgroundTimer();
-        }
-    }, [secondsLeft]);
+    const [timerOn, setTimerOn] = useState(false);
+   
+    const onPressTimerItem = (time) => {
+        setTimerClicked((prevState) => !prevState);
+        setTimer(time);
+      };
 
     const startTimer = () => {
-        BackgroundTimer.runBackgroundTimer(() => {
-            setSecondsLeft((secs) => {
-                if (secs > 0) return secs -1;
-                else return 0;
-            });
-        }, 1000);
+        setTimerClicked((prevState) => !prevState)
+        setInterval(() => {
+            setTime((prevTime) => prevTime + 1)
+        }, 1000)
     };
 
-    const clockify = () => {
-        let mins = Math.floor((secondsLeft / 60) % 60);
-        let seconds = Math.floor(secondsLeft % 60);
-
-        let displayMins = mins < 10 ? `0${mins}` : mins;
-        let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
-
-        return {
-            displayHours: displayHours,
-            displayMins: displayMins,
-            displaySeconds: displaySeconds,
-        };
-    };
-
-    return (
-        <View style={styles.container}>
-            <Text style={styles.time}>
-                {clockify().displayMins} Mins 
-                {clockify().displaySeconds} Secs 
-                </Text>
-
-            <Button 
-            title="Start/Stop" 
-            onPress={() => setTimerOn((current) => !current)}>
-
-            </Button>
-            <StatusBar style="auto" />
+return (
+   <View style={styles.container}>
+     {timerClicked && <Timer time={time} />}
+     <View style={styles.timerContainer}>
+              <Button
+                icon={"back-in-time"}
+                title="Timer"
+                onPress={ startTimer }
+              />
+              {/* <Text style={styles.timerText}>{timer}s</Text> */}
+            </View>
         </View>
+            // {timerOn && (
+            // <Text style={styles.displayTimerText}>{displayTimer}s</Text>
+            // )}
     );
 };
 

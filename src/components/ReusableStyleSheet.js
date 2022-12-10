@@ -16,6 +16,21 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 30,
     },
+    timerContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+      },
+      timerText: {
+        color: "#f1f1f1",
+        fontSize: 16,
+        marginLeft: 10,
+      },
+      displayTimerText: {
+        color: "#f1f1f1",
+        fontSize: 50,
+        fontWeight: "bold",
+        textAlign: "center",
+      },
 });
 
 export default styles;
