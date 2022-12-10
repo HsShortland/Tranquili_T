@@ -1,4 +1,4 @@
-import {View, Text, FlatList, StyleSheet, TouchableOpacity, } from "react-native";
+import {View, Text, StyleSheet } from "react-native";
 
    
 export default function Timer({ time }) {
@@ -8,14 +8,6 @@ export default function Timer({ time }) {
 
     return (
       <View style={styles.timerContainer}>
-        {/* <FlatList
-          style={styles.timerList}
-          renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => onClick(item.time)}>
-              <Text style={styles.item}>{item.key}</Text>
-            </TouchableOpacity>
-          )}
-        /> */}
         <Text styles={styles.item}>{time}</Text>
       </View>
     );

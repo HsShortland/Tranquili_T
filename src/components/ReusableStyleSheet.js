@@ -11,11 +11,6 @@ const styles = StyleSheet.create({
     text: {
         color: '#e0ab78'
     },
-    time: {
-        color: 'white',
-        textAlign: 'center',
-        fontSize: 30,
-    },
     timerContainer: {
         flexDirection: "row",
         alignItems: "center",

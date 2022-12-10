@@ -62,7 +62,7 @@ return (
             onPress={ startTimer }
             color="gray"
         />
-        <Text></Text>
+        
          <Button
             title="Reset"
             // onPress={}
