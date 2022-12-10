@@ -14,7 +14,7 @@ export default function MeditationTimer() {
     console.log(drawerStatus);
 
     const [timerClicked, setTimerClicked] = useState(false);
-    const [time, setTime] = useState(0);
+    const [time, setTime] = useState(600);
     const [timer, setTimer] = useState(0);
     const [timerOn, setTimerOn] = useState(false);
    
@@ -28,7 +28,7 @@ export default function MeditationTimer() {
     const startTimer = () => {
         setTimerClicked((prevState) => !prevState)
         setInterval(() => {
-            setTime((prevTime) => prevTime + 1)
+            setTime((prevTime) => prevTime - 1)
         }, 1000)
     };
 
