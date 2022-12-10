@@ -19,18 +19,18 @@ const styles = StyleSheet.create({
     timerContainer: {
         flexDirection: "row",
         alignItems: "center",
-      },
-      timerText: {
+    },
+    timerText: {
         color: "#f1f1f1",
         fontSize: 16,
         marginLeft: 10,
-      },
-      displayTimerText: {
+    },
+    displayTimerText: {
         color: "#f1f1f1",
         fontSize: 50,
         fontWeight: "bold",
         textAlign: "center",
-      },
+    },
 });
 
 export default styles;

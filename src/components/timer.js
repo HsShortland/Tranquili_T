@@ -16,18 +16,17 @@ export default function Timer({ time }) {
             </TouchableOpacity>
           )}
         /> */}
-        <Text>{time}</Text>
+        <Text styles={styles.item}>{time}</Text>
       </View>
     );
    }
    
    const styles = StyleSheet.create({
     timerContainer: {
-      position: "absolute",
-      width: "50%",
-      top: "25%",
-      right: "25%",
-      backgroundColor: "white",
+      bottom: -250,
+      left: -100,
+      width: "25%",
+      backgroundColor: "#AEA488",
       zIndex: 1,
       borderRadius: 10,
       padding: 10,
@@ -36,7 +35,7 @@ export default function Timer({ time }) {
       paddingTop: 10,
     },
     item: {
-      fontSize: 18,
+      fontSize: 30,
       textAlign: "center",
       height: 44,
       fontWeight: "bold",

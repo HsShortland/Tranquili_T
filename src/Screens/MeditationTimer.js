@@ -15,13 +15,15 @@ export default function MeditationTimer() {
 
     const [timerClicked, setTimerClicked] = useState(false);
     const [time, setTime] = useState(0);
-    
+    const [timer, setTimer] = useState(0);
     const [timerOn, setTimerOn] = useState(false);
    
+
     const onPressTimerItem = (time) => {
         setTimerClicked((prevState) => !prevState);
         setTimer(time);
       };
+
 
     const startTimer = () => {
         setTimerClicked((prevState) => !prevState)
@@ -29,6 +31,23 @@ export default function MeditationTimer() {
             setTime((prevTime) => prevTime + 1)
         }, 1000)
     };
+
+
+    useEffect(() => {
+        if (!timerOn) {
+          return;
+        }
+        setDisplayTimer(timer);
+    
+        const interval = setInterval(() => {
+          setDisplayTimer((prevTimer) =>
+            prevTimer > 0 ? prevTimer - 1 : clearInterval(interval)
+          );
+        }, 1000);
+      }, [timerOn, setTimerOn, timer]);
+
+
+
 
 return (
    <View style={styles.container}>
@@ -39,7 +58,7 @@ return (
                 title="Timer"
                 onPress={ startTimer }
               />
-              {/* <Text style={styles.timerText}>{timer}s</Text> */}
+              <Text style={styles.timerText}>{timer}s</Text>
             </View>
         </View>
             // {timerOn && (
