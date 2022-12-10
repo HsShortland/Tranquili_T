@@ -18,16 +18,22 @@ export default function MeditationTimer() {
         if (timerOn) startTimer();
         else BackgroundTimer.stopBackgroundTimer();
     
-    return () => {
-        BackgroundTimer.stopBackgroundTimer();
-    };
+        return () => {
+            BackgroundTimer.stopBackgroundTimer();
+        };
     }, [timerOn]);
+
+    useEffect(() => {
+        if (secondsLeft === 0) {
+            BackgroundTimer.stopBackgroundTimer();
+        }
+    }, [secondsLeft]);
 
     const startTimer = () => {
         BackgroundTimer.runBackgroundTimer(() => {
             setSecondsLeft((secs) => {
-                if (secs >0) return secs -1;
-                else return0;
+                if (secs > 0) return secs -1;
+                else return 0;
             });
         }, 1000);
     };
@@ -45,16 +51,25 @@ export default function MeditationTimer() {
             displayHours: displayHours,
             displayMins: displayMins,
             displaySeconds: displaySeconds,
-        }
+        };
     };
 
     return (
         <View style={styles.container}>
-            <Text style={styles.time}>{clockify().displayHours} Hours {clockify().displayMins} Mins {clockify().displaySeconds} Secs </Text>
-            <Button title="Start/Stop" onPress={() => setTimerOn((current) => !current)}></Button>
+            <Text style={styles.time}>
+                {clockify().displayHours} Hours 
+                {clockify().displayMins} Mins 
+                {clockify().displaySeconds} Secs 
+                </Text>
+
+            <Button 
+            title="Start/Stop" 
+            onPress={() => setTimerOn((current) => !current)}>
+
+            </Button>
             <StatusBar style="auto" />
-    </View>
-);
+        </View>
+    );
 };
 
 
