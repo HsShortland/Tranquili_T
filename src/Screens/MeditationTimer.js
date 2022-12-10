@@ -23,6 +23,15 @@ export default function MeditationTimer() {
     };
     }, [timerOn]);
 
+    const startTimer = () => {
+        BackgroundTimer.runBackgroundTimer(() => {
+            setSecondsLeft((secs) => {
+                if (secs >0) return secs -1;
+                else return0;
+            });
+        }, 1000);
+    };
+
     const clockify = () => {
         let hours = Math.floor(secondsLeft /60 /60);
         let mins = Math.floor((secondsLeft / 60) % 60);
@@ -42,7 +51,7 @@ export default function MeditationTimer() {
     return (
         <View style={styles.container}>
             <Text style={styles.time}>{clockify().displayHours} Hours {clockify().displayMins} Mins {clockify().displaySeconds} Secs </Text>
-            <Button title="Start/Stop"></Button>
+            <Button title="Start/Stop" onPress={() => setTimerOn((current) => !current)}></Button>
             <StatusBar style="auto" />
     </View>
 );
