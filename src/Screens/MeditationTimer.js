@@ -57,17 +57,19 @@ return (
      <Text style={styles.displayTimerText}>{displayTimer}</Text>
      <View style={styles.timerContainer}>
         <Text></Text>
-        <Button
-            title="Start/Stop"
-            onPress={ startTimer }
-            color="gray"
-        />
         
-         <Button
-            title="Reset"
-            // onPress={}
-            color="gray"
-        />
+            <Button
+                title="Start/Stop"
+                onPress={ startTimer }
+                color="gray"
+            />
+
+            <Button
+                title="Reset"
+                // onPress={}
+                color="gray"
+            />
+            
         </View>
     </View>
     //         {timerOn && (
