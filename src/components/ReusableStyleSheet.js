@@ -10,7 +10,12 @@ const styles = StyleSheet.create({
     },
     text: {
         color: '#e0ab78'
-    }
+    },
+    time: {
+        color: 'white',
+        textAlign: 'center',
+        fontSize: 30,
+    },
 });
 
 export default styles;
