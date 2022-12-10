@@ -17,6 +17,7 @@ export default function MeditationTimer() {
     const [time, setTime] = useState(600);
     const [timer, setTimer] = useState(0);
     const [timerOn, setTimerOn] = useState(false);
+    const [displayTimer, setDisplayTimer] = useState(timer);
    
 
     const onPressTimerItem = (time) => {
@@ -34,37 +35,40 @@ export default function MeditationTimer() {
 
 
     useEffect(() => {
-        if (!timerOn) {
+        if (timerOn)  startTimer();{
           return;
         }
         setDisplayTimer(timer);
+    });
     
-        const interval = setInterval(() => {
-          setDisplayTimer((prevTimer) =>
-            prevTimer > 0 ? prevTimer - 1 : clearInterval(interval)
-          );
-        }, 1000);
-      }, [timerOn, setTimerOn, timer]);
+    //     const interval = setInterval(() => {
+    //       setDisplayTimer(() =>
+    //         prevTimer > 0 ? prevTimer - 1 : clearInterval(interval)
+    //       );
+    //     }, 1000);
+    //   }, [timerOn, setTimerOn, timer]);
 
-
+    
 
 
 return (
    <View style={styles.container}>
      {timerClicked && <Timer time={time} />}
+     <Text style={styles.displayTimerText}>{displayTimer}</Text>
      <View style={styles.timerContainer}>
-              <Button
-                icon={"back-in-time"}
-                title="Timer"
-                onPress={ startTimer }
-              />
-              <Text style={styles.timerText}>{timer}s</Text>
-            </View>
+        <Text></Text>
+        <Button
+            icon={"back-in-time"}
+            title="Timer"
+            onPress={ startTimer }
+            color="gray"
+        />
         </View>
-            // {timerOn && (
-            // <Text style={styles.displayTimerText}>{displayTimer}s</Text>
-            // )}
-    );
+    </View>
+    //         {timerOn && (
+             
+    //         )}
+     );
 };
 
 

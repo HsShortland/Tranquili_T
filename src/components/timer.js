@@ -23,9 +23,9 @@ export default function Timer({ time }) {
    
    const styles = StyleSheet.create({
     timerContainer: {
-      bottom: -250,
-      left: -100,
-      width: "25%",
+      bottom: -370,
+      left: -120,
+      width: "20%",
       backgroundColor: "#AEA488",
       zIndex: 1,
       borderRadius: 10,
