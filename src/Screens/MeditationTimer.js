@@ -58,9 +58,14 @@ return (
      <View style={styles.timerContainer}>
         <Text></Text>
         <Button
-            icon={"back-in-time"}
-            title="Timer"
+            title="Start/Stop"
             onPress={ startTimer }
+            color="gray"
+        />
+        <Text></Text>
+         <Button
+            title="Reset"
+            // onPress={}
             color="gray"
         />
         </View>
