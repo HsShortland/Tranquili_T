@@ -4,7 +4,7 @@ import styles from './ReusableStyleSheet';
 export default function StartButton(props) {
 
     return(
-        <Pressable style={styles.startButtonStyle}>
+        <Pressable style={styles.greyBlueButtonStyle}>
             <Text>{props.details}</Text>
         </Pressable>
     );

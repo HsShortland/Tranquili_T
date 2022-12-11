@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: "center",
     },
-    startButtonStyle: {
+    greyBlueButtonStyle: {
       alignItems: 'center',
       justifyContent: 'center',
       paddingVertical: 12,
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#727E94',
       margin: 10,
     },
-    resetButtonStyle: {
+    beigeButtonStyle: {
         alignItems: 'center',
         justifyContent: 'center',
         paddingVertical: 12,

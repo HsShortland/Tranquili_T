@@ -4,7 +4,7 @@ import styles from './ReusableStyleSheet';
 export default function ResetButton(props) {
 
     return(
-        <Pressable style={styles.resetButtonStyle}>
+        <Pressable style={styles.beigeButtonStyle}>
             <Text>{props.details}</Text>
         </Pressable>
     );
