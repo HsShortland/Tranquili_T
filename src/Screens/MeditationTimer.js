@@ -10,26 +10,19 @@ import ResetButton from '../components/ResetButton';
 
 
 
-export default function MeditationTimer({ timeForSeconds }) {
+export default function MeditationTimer() {
+    //Navigation
     const nav = useNavigation();
     const drawerStatus = useDrawerStatus();
     console.log(drawerStatus);
 
+    // timer
     const [timerClicked, setTimerClicked] = useState(false);
     const [time, setTime] = useState(600);
     const [displayTimer, setDisplayTimer] = useState(time);
-    const [secondsLeft, setSecondsLeft] = useState(timeForSeconds);
+    const [secondsLeft, setSecondsLeft] = useState(600);
     
    
-
-
-    const startTimer = () => {
-        setTimerClicked((prevState) => !prevState)
-    };
-
-    const resetTimer = () => {
-        
-    }
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -38,23 +31,28 @@ export default function MeditationTimer({ timeForSeconds }) {
         return () => clearInterval(interval);
         });
 
-    // useEffect(() => {
-    //     if (timerOn)  startTimer();{
-    //       return;
-    //     }
-    //     setDisplayTimer(timer);
-    // });
-    
 
-    
+    const clockIt = () => {
+        let mins = Math.floor((secondsLeft / 60) % 60);
+        let seconds = Math.floor(secondsLeft % 60);
 
+        let displayMins = mins < 10 ? `0${mins}` : mins;
+        let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
+        return {
+            displayMins: displayMins,
+            displaySeconds: displaySeconds,
+        };
+    };
 
 return (
    <View style={styles.container}>
      
-     <Text style={styles.displayTimerText}>{secondsLeft}</Text>
+     <Text style={styles.displayTimerText}>{clockIt().displayMins} Mins {clockIt().displaySeconds} Secs </Text>
+
      <StartButton details= "Start/Stop"></StartButton>
+
      <ResetButton details= "Reset"></ResetButton>
+
      <View style={styles.timerContainer}>
             
         </View>
