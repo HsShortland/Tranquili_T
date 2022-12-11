@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     },
     displayTimerText: {
         color: "#e0ab78",
-        fontSize: 50,
+        fontSize: 40,
         fontWeight: "bold",
         textAlign: "center",
     },
