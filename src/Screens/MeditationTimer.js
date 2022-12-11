@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, Button, View } from 'react-native';
+import {Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDrawerStatus } from '@react-navigation/drawer';
 import styles from '../components/ReusableStyleSheet';
