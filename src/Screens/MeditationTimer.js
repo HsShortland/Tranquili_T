@@ -16,10 +16,8 @@ export default function MeditationTimer() {
     const drawerStatus = useDrawerStatus();
     console.log(drawerStatus);
 
-    // timer
-    const [timerClicked, setTimerClicked] = useState(false);
+    // time
     const [time, setTime] = useState(600);
-    const [displayTimer, setDisplayTimer] = useState(time);
     const [secondsLeft, setSecondsLeft] = useState(600);
     
    
