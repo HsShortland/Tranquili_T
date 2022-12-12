@@ -1,4 +1,3 @@
-
 import { Pressable, StyleSheet, Text } from "react-native";
 import React, {useEffect, useState} from 'react';
 import styles from './ReusableStyleSheet';
@@ -11,7 +10,7 @@ export default function TenMinute() {
 
     function tenStart() {
         const interval = setInterval(() => {
-            if(secondsLeft > 0) setSecondsLeft(secondsLeft - 1);
+            if(secondsLeft > 0) setSecondsLeft(secondsLeft => secondsLeft - 1);
         }, 1000);
         return () => clearInterval(interval);
         };

@@ -17,34 +17,11 @@ export default function MeditationTimer() {
     const drawerStatus = useDrawerStatus();
     console.log(drawerStatus);
 
-    // time
-    const [secondsLeft, setSecondsLeft] = useState(600);
-    
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if(secondsLeft > 0) setSecondsLeft(secondsLeft - 1);
-        }, 1000);
-        return () => clearInterval(interval);
-        });
-
-
-    const clockIt = () => {
-        let mins = Math.floor((secondsLeft / 60) % 60);
-        let seconds = Math.floor(secondsLeft % 60);
-
-        let displayMins = mins < 10 ? `0${mins}` : mins;
-        let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
-        return {
-            displayMins: displayMins,
-            displaySeconds: displaySeconds,
-        };
-    };
 
 return (
     <View style={styles.container}>
     
-        <Text style={styles.displayTimerText}>{clockIt().displayMins} Mins {clockIt().displaySeconds} Secs </Text>
+        
         
         <StartButton details= "Start"></StartButton>
 
