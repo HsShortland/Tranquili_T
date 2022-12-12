@@ -10,13 +10,12 @@ export default function TenMinute() {
     
 
     function tenStart() {
-        useEffect(() => {
-            const interval = setInterval(() => {
-                if(secondsLeft > 0) setSecondsLeft(secondsLeft - 1);
-            }, 1000);
-            return () => clearInterval(interval);
-            });
+        const interval = setInterval(() => {
+            if(secondsLeft > 0) setSecondsLeft(secondsLeft - 1);
+        }, 1000);
+        return () => clearInterval(interval);
         };
+    
 
 
     const clockIt = () => {
@@ -31,11 +30,13 @@ export default function TenMinute() {
         };
     };
 
+
     return(
         <Pressable style={styles.greyBlueButtonStyle} onPress={tenStart}>
             <Text>{clockIt().displayMins} Mins {clockIt().displaySeconds} Secs </Text>
         </Pressable>
     );
 }
+
 
 
