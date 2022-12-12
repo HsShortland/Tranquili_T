@@ -6,6 +6,7 @@ import React, {useEffect, useState} from 'react';
 import StartButton from '../components/StartButton';
 import ResetButton from '../components/ResetButton';
 import StopButton from '../components/StopButton';
+import TenMinute from '../components/TenMinuteTimer';
 
 
 
@@ -50,6 +51,8 @@ return (
         <StopButton details= "Stop"></StopButton>
 
         <ResetButton details= "Reset"></ResetButton>
+
+        <TenMinute></TenMinute>
         
     </View>
 
