@@ -32,16 +32,16 @@ class QuoteOfDay extends React.Component {
     }
   
     componentDidMount(){
-      console.log(`the about us screen successfully exists: ${Date.now()}`)
+      console.log(`Quote of the day successfully loading: ${Date.now()}`)
+      return this.fetchData()
     }
   
     render(){
     
     return(
       <View style={styles.container}>
-        <Button title="Press me to get the data!!" color='blue' onPress={this.fetchData}></Button>
-        <Text>quote: {this.state.data.q}</Text>
-        <Text>author: {this.state.data.a}</Text>
+        <Text>Quote: {this.state.data.q}</Text>
+        <Text>Author: {this.state.data.a}</Text>
         <StatusBar style="auto" />
         </View>
     )}
