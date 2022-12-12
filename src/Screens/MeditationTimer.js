@@ -7,6 +7,7 @@ import StartButton from '../components/StartButton';
 import ResetButton from '../components/ResetButton';
 import StopButton from '../components/StopButton';
 import TenMinute from '../components/TenMinuteTimer';
+import FifteenMinute from '../components/FifteenMinuteTimer';
 
 
 
@@ -30,7 +31,8 @@ return (
         <ResetButton details= "Reset"></ResetButton>
 
         <TenMinute></TenMinute>
-        
+
+        <FifteenMinute></FifteenMinute>
     </View>
 
     );
