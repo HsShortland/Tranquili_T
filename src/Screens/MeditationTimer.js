@@ -8,6 +8,7 @@ import ResetButton from '../components/ResetButton';
 import StopButton from '../components/StopButton';
 import TenMinute from '../components/TenMinuteTimer';
 import FifteenMinute from '../components/FifteenMinuteTimer';
+import TwentyMinute from '../components/TwentyMinuteTimer';
 
 
 
@@ -21,18 +22,13 @@ export default function MeditationTimer() {
 
 return (
     <View style={styles.container}>
-    
-        
-        
-        <StartButton details= "Start"></StartButton>
-
-        <StopButton details= "Stop"></StopButton>
-
-        <ResetButton details= "Reset"></ResetButton>
 
         <TenMinute></TenMinute>
 
         <FifteenMinute></FifteenMinute>
+
+        <TwentyMinute></TwentyMinute>
+
     </View>
 
     );
