@@ -5,6 +5,7 @@ import styles from '../components/ReusableStyleSheet';
 import React, {useEffect, useState} from 'react';
 import StartButton from '../components/StartButton';
 import ResetButton from '../components/ResetButton';
+import StopButton from '../components/StopButton';
 
 
 
@@ -44,7 +45,9 @@ return (
     
         <Text style={styles.displayTimerText}>{clockIt().displayMins} Mins {clockIt().displaySeconds} Secs </Text>
         
-        <StartButton details= "Start/Stop"></StartButton>
+        <StartButton details= "Start"></StartButton>
+
+        <StopButton details= "Stop"></StopButton>
 
         <ResetButton details= "Reset"></ResetButton>
         

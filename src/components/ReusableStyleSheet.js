@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
       paddingHorizontal: 32,
       borderRadius: 4,
       elevation: 3,
-      backgroundColor: '#727E94',
+      backgroundColor: '#79a1b1',
       margin: 10,
     },
     beigeButtonStyle: {
@@ -40,6 +40,16 @@ const styles = StyleSheet.create({
         elevation: 3,
         backgroundColor: '#AEA488',
         margin: 10,
+      },
+    grayButtonStyle: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 4,
+      elevation: 3,
+      backgroundColor: '#727e94',
+      margin: 10,
       },
     textStyle: {
       fontSize: 16,
