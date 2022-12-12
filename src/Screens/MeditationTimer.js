@@ -18,22 +18,14 @@ export default function MeditationTimer() {
 
     // time
     const [secondsLeft, setSecondsLeft] = useState(600);
-
-    //button
-    const [running, setRunning] = useState(false);
     
 
     useEffect(() => {
-        let interval;
-        if (running) {
-            const interval = setInterval(() => {
-                if(secondsLeft > 0) setSecondsLeft(secondsLeft - 1);
-            }, 1000);
-        } else if (!running) {
-            clearInterval(interval);
-        }
+        const interval = setInterval(() => {
+            if(secondsLeft > 0) setSecondsLeft(secondsLeft - 1);
+        }, 1000);
         return () => clearInterval(interval);
-        }, [running]);
+        });
 
 
     const clockIt = () => {
@@ -53,11 +45,11 @@ return (
     
         <Text style={styles.displayTimerText}>{clockIt().displayMins} Mins {clockIt().displaySeconds} Secs </Text>
         
-        <StartButton details= "Start" onPress={() => setRunning(true)}></StartButton>
+        <StartButton details= "Start"></StartButton>
 
-        <StopButton details= "Stop" onPress={() => setRunning(false)}></StopButton>
+        <StopButton details= "Stop"></StopButton>
 
-        <ResetButton details= "Reset" onPress={() => setSecondsLeft(600)}></ResetButton>
+        <ResetButton details= "Reset"></ResetButton>
         
     </View>
 
