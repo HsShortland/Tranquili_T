@@ -7,15 +7,16 @@ export default function TenMinute() {
      // time
     const [secondsLeft, setSecondsLeft] = useState(600);
     
+    
 
     function tenStart() {
+        
         const interval = setInterval(() => {
             if(secondsLeft > 0) setSecondsLeft(secondsLeft => secondsLeft - 1);
         }, 1000);
         return () => clearInterval(interval);
         };
     
-
 
     const clockIt = () => {
         let mins = Math.floor((secondsLeft / 60) % 60);
@@ -31,7 +32,7 @@ export default function TenMinute() {
 
 
     return(
-        <Pressable style={styles.greyBlueButtonStyle} onPress={tenStart}>
+        <Pressable style={styles.greyBlueButtonStyle} onPress={tenStart} >
             <Text>{clockIt().displayMins} Mins {clockIt().displaySeconds} Secs </Text>
         </Pressable>
     );
