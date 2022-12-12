@@ -48,6 +48,12 @@ const styles = StyleSheet.create({
       letterSpacing: 0.25,
       color: '#003b49',
     },
+    buttonStyleContainer: {
+      flex: 1,
+      flexDirection: 'column',
+      marginHorizontal: 20,
+      marginTop: 5,
+     },
 });
 
 export default styles;
