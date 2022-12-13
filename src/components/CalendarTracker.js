@@ -10,7 +10,7 @@ function transformDatesToCalendarFormat(dates) {
     const transformedDates =
         Object.fromEntries(
             dates.map(x =>
-                [x, { selected: true, selectedColor: 'blue' }]
+                [x, { selected: true, selectedColor: '#384A72' }]
             )
         );
 
@@ -25,6 +25,8 @@ export default function CalendarTracker() {
     );
 
     return (
-        <Calendar markedDates={transformDatesToCalendarFormat(markOnCalendar)} firstDay={1} enableSwipeMonths={true} />
+        <Calendar markedDates={transformDatesToCalendarFormat(markOnCalendar)} firstDay={1} enableSwipeMonths={true}
+        theme={{calendarBackground: '#15224c', textSectionTitleColor: '#AEA488', dayTextColor:'#727e94',
+        monthTextColor: '#E0AB78'}} />
     );
 }

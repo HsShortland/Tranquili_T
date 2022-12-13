@@ -7,6 +7,7 @@ import CalendarTracker from '../components/CalendarTracker';
 import { useDispatch } from 'react-redux';
 import * as React from 'react';
 
+
 export default function MeditationTracker() {
     const nav = useNavigation();
     const drawerStatus = useDrawerStatus();
@@ -21,12 +22,14 @@ export default function MeditationTracker() {
         }
         dispatch(action)
     }
+
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
-            <Text style={styles.text}>Meditation Tracker</Text>
+            <Text style={styles.text}>Tranquili-T</Text>
+            <Text style={styles.text}>Meditation Tracker{'\n'}</Text>
             <CalendarTracker></CalendarTracker>
-            <Button title='Meditation Timer' onPress={() => { markCalendar(); }}></Button>
-    </View>
-);
+            <Button color='#E0AB78' title='Meditation Tracker' onPress={() => { markCalendar(); }}></Button>
+        </View>
+    );
 }
