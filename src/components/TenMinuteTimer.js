@@ -1,17 +1,21 @@
-import { Pressable, StyleSheet, Text } from "react-native";
+import { Pressable, StyleSheet, Button, Text } from "react-native";
 import React, {useEffect, useState} from 'react';
 import styles from './ReusableStyleSheet';
 
+const TIME = 600;
 
 export default function TenMinuteTimer(){
-    const [secondsLeft, setSecondsLeft] = useState(600);
+    // time
+    const [secondsLeft, setSecondsLeft] = useState(TIME);
 
-    useEffect(() => {
+
+    function tenStart() {
         const interval = setInterval(() => {
-            if(secondsLeft > 0) setSecondsLeft(secondsLeft - 1);
+            setSecondsLeft(secondsLeft => (secondsLeft > 0) ? secondsLeft - 1 : 0);
         }, 1000);
-        return () => clearInterval(interval);
-        });
+    };
+
+
 
     const clockIt = () => {
         let mins = Math.floor((secondsLeft / 60) % 60);
@@ -24,19 +28,19 @@ export default function TenMinuteTimer(){
             displaySeconds: displaySeconds,
         };
     };
-        return(
-        <Pressable style={styles.beigeButtonStyle}>
-            
-        </Pressable>
-    );
+
+
+
+    const { displayMins, displaySeconds } = clockIt();
+
+    return (
+
+        <Button
+            title={`${displayMins} Mins ${displaySeconds} Secs`}
+            disabled={ TIME != secondsLeft } 
+            onPress={() => { tenStart(); }}
+            color= '#79a1b1'>
+        </Button >
+    )
+
 }
-
-
-
-// export default function TenMinuteTimer(){
-//     return(
-//     <Pressable style={styles.greyBlueButtonStyle}>
-//             <Text>{secondsLeft}</Text>
-//         </Pressable>
-//     )
-// }
