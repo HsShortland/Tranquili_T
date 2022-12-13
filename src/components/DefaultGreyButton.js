@@ -1,10 +1,10 @@
 import { Pressable, StyleSheet, Text } from "react-native";
 import styles from './ReusableStyleSheet';
 
-export default function ResetButton(props) {
+export default function GreyButton(props) {
 
     return(
-        <Pressable style={styles.beigeButtonStyle}>
+        <Pressable style={styles.grayButtonStyle}>
             <Text>{props.details}</Text>
         </Pressable>
     );
