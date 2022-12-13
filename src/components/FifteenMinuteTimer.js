@@ -1,20 +1,21 @@
-import { Pressable, StyleSheet, Text } from "react-native";
-import React, {useEffect, useState} from 'react';
+import { Pressable, Button, StyleSheet, Text } from "react-native";
+import React, { useEffect, useState } from 'react';
 import styles from './ReusableStyleSheet';
+
+const TIME = 10;
 
 export default function FifteenMinute() {
 
-     // time
-    const [secondsLeft, setSecondsLeft] = useState(900);
-    
+    // time
+    const [secondsLeft, setSecondsLeft] = useState(TIME);
+
 
     function fifteenStart() {
         const interval = setInterval(() => {
-            if(secondsLeft > 0) setSecondsLeft(secondsLeft => secondsLeft - 1);
+            setSecondsLeft(secondsLeft => (secondsLeft > 0) ? secondsLeft - 1 : 0);
         }, 1000);
-        return () => clearInterval(interval);
-        };
-    
+    };
+
 
 
     const clockIt = () => {
@@ -30,9 +31,17 @@ export default function FifteenMinute() {
     };
 
 
-    return(
-        <Pressable style={styles.grayButtonStyle} onPress={fifteenStart}>
-            <Text>{clockIt().displayMins} Mins {clockIt().displaySeconds} Secs </Text>
-        </Pressable>
-    );
+
+    const { displayMins, displaySeconds } = clockIt();
+
+    return (
+
+        <Button
+            title={`${displayMins} Mins ${displaySeconds} Secs`}
+            disabled={ TIME != secondsLeft }
+            style={styles.grayButtonStyle}
+            onPress={() => { fifteenStart(); }}>
+        </Button >
+    )
+
 }

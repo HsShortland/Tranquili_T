@@ -3,10 +3,8 @@ import React, {useEffect, useState} from 'react';
 import styles from './ReusableStyleSheet';
 
 
-
-    export const [secondsLeft, setSecondsLeft] = useState(600);
-    
-    
+export default function TenMinuteTimer(){
+    const [secondsLeft, setSecondsLeft] = useState(600);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -14,10 +12,6 @@ import styles from './ReusableStyleSheet';
         }, 1000);
         return () => clearInterval(interval);
         });
-
-        
-        
-    
 
     const clockIt = () => {
         let mins = Math.floor((secondsLeft / 60) % 60);
@@ -30,9 +24,19 @@ import styles from './ReusableStyleSheet';
             displaySeconds: displaySeconds,
         };
     };
+        return(
+        <Pressable style={styles.beigeButtonStyle}>
+            
+        </Pressable>
+    );
+}
 
 
 
-
-
-
+// export default function TenMinuteTimer(){
+//     return(
+//     <Pressable style={styles.greyBlueButtonStyle}>
+//             <Text>{secondsLeft}</Text>
+//         </Pressable>
+//     )
+// }

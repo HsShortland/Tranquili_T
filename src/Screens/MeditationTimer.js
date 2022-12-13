@@ -7,6 +7,7 @@ import TenMinute from '../components/TenMinuteTimer';
 import FifteenMinute from '../components/FifteenMinuteTimer';
 import TwentyMinute from '../components/TwentyMinuteTimer';
 import ButtonTen from '../components/StopButton';
+import TenMinuteTimer from '../components/TenMinuteTimer';
 
 
 
@@ -21,7 +22,7 @@ export default function MeditationTimer() {
 return (
     <View style={styles.container}>
 
-        <ButtonTen></ButtonTen>
+        <TenMinuteTimer></TenMinuteTimer>
 
         <FifteenMinute></FifteenMinute>
 
