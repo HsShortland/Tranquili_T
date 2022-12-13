@@ -2,7 +2,7 @@ import { Pressable, Button, StyleSheet, Text } from "react-native";
 import React, { useEffect, useState } from 'react';
 import styles from './ReusableStyleSheet';
 
-const TIME = 10;
+const TIME = 900;
 
 export default function FifteenMinute() {
 
@@ -38,9 +38,9 @@ export default function FifteenMinute() {
 
         <Button
             title={`${displayMins} Mins ${displaySeconds} Secs`}
-            disabled={ TIME != secondsLeft }
-            style={styles.grayButtonStyle}
-            onPress={() => { fifteenStart(); }}>
+            disabled={ TIME != secondsLeft } 
+            onPress={() => { fifteenStart(); }}
+            color= '#727e94'>
         </Button >
     )
 
