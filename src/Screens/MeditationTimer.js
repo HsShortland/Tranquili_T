@@ -6,6 +6,7 @@ import React, {useEffect, useState} from 'react';
 import TenMinute from '../components/TenMinuteTimer';
 import FifteenMinute from '../components/FifteenMinuteTimer';
 import TwentyMinute from '../components/TwentyMinuteTimer';
+import ButtonTen from '../components/StopButton';
 
 
 
@@ -20,7 +21,7 @@ export default function MeditationTimer() {
 return (
     <View style={styles.container}>
 
-        <TenMinute></TenMinute>
+        <ButtonTen></ButtonTen>
 
         <FifteenMinute></FifteenMinute>
 
