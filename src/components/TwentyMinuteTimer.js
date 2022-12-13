@@ -1,20 +1,21 @@
-import { Pressable, StyleSheet, Text } from "react-native";
+import { Pressable, StyleSheet, Button, Text } from "react-native";
 import React, {useEffect, useState} from 'react';
 import styles from './ReusableStyleSheet';
 
+const TIME = 1200;
+
 export default function TwentyMinute() {
 
-     // time
-    const [secondsLeft, setSecondsLeft] = useState(1200);
-    
+    // time
+    const [secondsLeft, setSecondsLeft] = useState(TIME);
+
 
     function twentyStart() {
         const interval = setInterval(() => {
-            if(secondsLeft > 0) setSecondsLeft(secondsLeft => secondsLeft - 1);
+            setSecondsLeft(secondsLeft => (secondsLeft > 0) ? secondsLeft - 1 : 0);
         }, 1000);
-        return () => clearInterval(interval);
-        };
-    
+    };
+
 
 
     const clockIt = () => {
@@ -30,9 +31,18 @@ export default function TwentyMinute() {
     };
 
 
-    return(
-        <Pressable style={styles.beigeButtonStyle} onPress={twentyStart}>
-            <Text>{clockIt().displayMins} Mins {clockIt().displaySeconds} Secs </Text>
-        </Pressable>
-    );
+
+    const { displayMins, displaySeconds } = clockIt();
+
+    return (
+
+        <Button
+            title={`${displayMins} Mins ${displaySeconds} Secs`}
+            disabled={ TIME != secondsLeft } 
+            onPress={() => { twentyStart(); }}
+            color= '#AEA488'
+            >
+        </Button >
+    )
+
 }
