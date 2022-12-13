@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: "center",
     },
-    greyBlueButtonStyle: {
+    blueGreyButtonStyle: {
       alignItems: 'center',
       justifyContent: 'center',
       paddingVertical: 12,
