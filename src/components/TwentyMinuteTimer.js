@@ -1,6 +1,5 @@
-import { Pressable, StyleSheet, Button, Text } from "react-native";
-import React, {useEffect, useState} from 'react';
-import styles from './ReusableStyleSheet';
+import {Button} from "react-native";
+import React, {useState} from 'react';
 
 const TIME = 1200;
 
@@ -17,7 +16,6 @@ export default function TwentyMinute() {
     };
 
 
-
     const clockIt = () => {
         let mins = Math.floor((secondsLeft / 60) % 60);
         let seconds = Math.floor(secondsLeft % 60);
@@ -29,7 +27,6 @@ export default function TwentyMinute() {
             displaySeconds: displaySeconds,
         };
     };
-
 
 
     const { displayMins, displaySeconds } = clockIt();

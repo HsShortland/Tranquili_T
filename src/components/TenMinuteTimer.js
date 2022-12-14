@@ -1,6 +1,6 @@
-import { Pressable, StyleSheet, Button, Text } from "react-native";
-import React, {useEffect, useState} from 'react';
-import styles from './ReusableStyleSheet';
+import {Button} from "react-native";
+import React, {useState} from 'react';
+
 
 const TIME = 600;
 
