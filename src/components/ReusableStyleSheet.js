@@ -14,11 +14,57 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontFamily: 'OleoScript-Regular',
     },
-    time: {
-        color: 'white',
-        textAlign: 'center',
-        fontSize: 30,
+    timerContainer: {
+        flexDirection: "row",
+        alignItems: "center",
     },
+    displayTimerText: {
+        color: "#e0ab78",
+        fontSize: 40,
+        fontWeight: "bold",
+        textAlign: "center",
+    },
+    blueGreyButtonStyle: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 4,
+      elevation: 3,
+      backgroundColor: '#79a1b1',
+      margin: 10,
+    },
+    beigeButtonStyle: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 12,
+        paddingHorizontal: 32,
+        borderRadius: 4,
+        elevation: 3,
+        backgroundColor: '#AEA488',
+        margin: 10,
+      },
+    grayButtonStyle: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 4,
+      elevation: 3,
+      backgroundColor: '#727e94',
+      margin: 10,
+      },
+    textStyle: {
+      fontSize: 16,
+      lineHeight: 21,
+      fontWeight: 'bold',
+      letterSpacing: 0.25,
+      color: '#003b49',
+    },
+    space: {
+      width: 20,
+      height: 30,
+    }
 });
 
 export default styles;
