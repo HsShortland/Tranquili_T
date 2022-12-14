@@ -58,6 +58,10 @@ const styles = StyleSheet.create({
       letterSpacing: 0.25,
       color: '#003b49',
     },
+    space: {
+      width: 20,
+      height: 20,
+    }
 });
 
 export default styles;
