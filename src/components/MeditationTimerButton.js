@@ -1,6 +1,5 @@
 import { Button } from "react-native";
 import React, { useState, useRef } from 'react';
-import { Audio } from 'expo-av';
 import { useDispatch } from 'react-redux';
 
 export default function MeditationTimerButton({ lotAnimation, totalTime, color, soundHook }) {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '../components/ReusableStyleSheet';
-import {View, Text, Button} from 'react-native';
+import {View, Text} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 

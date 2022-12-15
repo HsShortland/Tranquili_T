@@ -1,7 +1,5 @@
 import { StyleSheet } from 'react-native';
 
-
-// add things here as needed that can be applied to all screens
 const styles = StyleSheet.create({
     container: {
         flex: 1,

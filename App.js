@@ -5,7 +5,6 @@ import MeditationTimer from './src/Screens/MeditationTimer';
 import MeditationTracker from './src/Screens/MeditationTracker';
 import * as React from 'react';
 import { useFonts } from 'expo-font';
-import { View } from 'react-native';
 
 
 import { Provider } from 'react-redux';
