@@ -15,7 +15,7 @@ export default function MeditationTracker() {
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
-            <Text style={styles.text}>Tranquili-T</Text>
+            {/* <Text style={styles.text}>Tranquili-T</Text> */}
             <Text style={styles.text}>Meditation Tracker{'\n'}</Text>
             <CalendarTracker></CalendarTracker>
         </View>

@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { View, useWindowDimensions, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDrawerStatus } from '@react-navigation/drawer';
 import { useRef, useState, useEffect } from 'react';
@@ -6,9 +6,11 @@ import { useRef, useState, useEffect } from 'react';
 import { Audio } from 'expo-av';
 import audioFile from '../../assets/simply-meditation-series-11hz-alpha-binaural-waves-for-relaxed-focus-8028.mp3';
 
+
 import MeditationTimerButton from '../components/MeditationTimerButton';
 import styles from '../components/ReusableStyleSheet';
 import LotusAnimation from '../components/LotusAnimation';
+
 
 export default function MeditationTimer() {
     const nav = useNavigation();
@@ -16,6 +18,7 @@ export default function MeditationTimer() {
     console.log(drawerStatus);
 
     const lotAnimation = useRef(null);
+
 
     const soundHook = useState();
     const [soundState, setSoundState] = soundHook;
