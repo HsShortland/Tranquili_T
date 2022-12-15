@@ -28,11 +28,6 @@ export default function HomeScreen() {
                 onPress={() => nav.openDrawer()}>
                     <Text>Get Started</Text>
             </Pressable>
-            {/* <Button
-                title="Get Started"
-                onPress={() => nav.openDrawer()}
-                color='white'
-                elevation='50'></Button> */}
             <StatusBar style="auto" />
         </View>
     );

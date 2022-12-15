@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, Button, View } from 'react-native';
+import { Text, Pressable, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDrawerStatus } from '@react-navigation/drawer';
 import styles from '../components/ReusableStyleSheet';
@@ -15,9 +15,12 @@ export default function MeditationTracker() {
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
-            {/* <Text style={styles.text}>Tranquili-T</Text> */}
             <Text style={styles.text}>Meditation Tracker{'\n'}</Text>
             <CalendarTracker></CalendarTracker>
+            <View style={styles.space} />
+            <Pressable style={styles.meditationTrackerButton} onPress={() => nav.openDrawer()}>
+                <Text style={styles.timerTrackerButtonText}>Where to next?</Text>
+            </Pressable>
         </View>
     );
 }

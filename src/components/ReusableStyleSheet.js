@@ -25,36 +25,6 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: "center",
     },
-    blueGreyButtonStyle: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingVertical: 12,
-      paddingHorizontal: 32,
-      borderRadius: 4,
-      elevation: 3,
-      backgroundColor: '#79a1b1',
-      margin: 10,
-    },
-    beigeButtonStyle: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: 12,
-        paddingHorizontal: 32,
-        borderRadius: 4,
-        elevation: 3,
-        backgroundColor: '#AEA488',
-        margin: 10,
-      },
-    grayButtonStyle: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingVertical: 12,
-      paddingHorizontal: 32,
-      borderRadius: 4,
-      elevation: 3,
-      backgroundColor: '#727e94',
-      margin: 10,
-      },
     textStyle: {
       fontSize: 16,
       lineHeight: 21,
@@ -107,6 +77,31 @@ const styles = StyleSheet.create({
       elevation: 3,
       backgroundColor: '#AEA488',
       marginBottom: 150
+    },
+    timerTrackerButtonText: {
+      color: 'white',
+      fontSize: 17,
+      fontFamily: 'OleoScript-Regular',
+    },
+    meditationTimerButton:{
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 4,
+      elevation: 3,
+      backgroundColor: '#E0AB78',
+      marginBottom: 150
+    }
+    ,
+    meditationTrackerButton:{
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 4,
+      elevation: 3,
+      backgroundColor: '#727E94',
     }
 });
 

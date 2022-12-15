@@ -53,7 +53,7 @@ export default function MeditationTimerButton({ lotAnimation, totalTime, color, 
                 markCalendar();
                 timerStart();
                 lotAnimation.current?.play();
-                try { soundState.playAsync(); }
+                try {soundState.playAsync(); }
                 catch (e) { }
             }}
             color={color}>

@@ -33,10 +33,7 @@ export default function App() {
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <NavigationContainer>
-          <Drawer.Navigator initialRouteName="HomeScreen"
-            screenOptions={{
-              headerShown: false
-          }}>
+          <Drawer.Navigator initialRouteName="HomeScreen" screenOptions={{headerShown: false}}>
             <Drawer.Screen name="Home" component={HomeScreen} />
             <Drawer.Screen name="Meditation Timer" component={MeditationTimer} />
             <Drawer.Screen name="Meditation Tracker" component={MeditationTracker} />

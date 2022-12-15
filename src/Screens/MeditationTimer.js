@@ -1,4 +1,4 @@
-import { View, useWindowDimensions, Image, Text } from 'react-native';
+import { View, Pressable, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDrawerStatus } from '@react-navigation/drawer';
 import { useRef, useState, useEffect } from 'react';
@@ -42,14 +42,20 @@ export default function MeditationTimer() {
     return (
         <View style={styles.container}>
             <View>
+                <View style={styles.space} />
+                <View style={styles.space} />
                 <LotusAnimation lotAnimation={lotAnimation} />
             </View>
             <View>
-                <MeditationTimerButton lotAnimation={lotAnimation} totalTime={600} color={'#79a1b1'} soundHook={soundHook} />
+                <MeditationTimerButton lotAnimation={lotAnimation} totalTime={10} color={'#79a1b1'} soundHook={soundHook} />
                 <View style={styles.space} />
                 <MeditationTimerButton lotAnimation={lotAnimation} totalTime={900} color={'#727e94'} soundHook={soundHook} />
                 <View style={styles.space} />
                 <MeditationTimerButton lotAnimation={lotAnimation} totalTime={1200} color={'#AEA488'} soundHook={soundHook} />
+                <View style={styles.space} />
+                <Pressable style={styles.meditationTimerButton} onPress={() => nav.openDrawer()}>
+                    <Text style={styles.timerTrackerButtonText}>Where to next?</Text>
+                </Pressable>
             </View>
         </View>
     );
