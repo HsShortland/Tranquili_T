@@ -25,7 +25,7 @@ export default function MeditationTimerButton({ lotAnimation, totalTime, color, 
                 if (secondsLeft > 0)
                     return secondsLeft - 1;
                 else {
-                    soundState.playAsync();
+                    soundState.stopAsync();
                     return 0;
                 }
             });
