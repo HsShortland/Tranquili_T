@@ -22,10 +22,10 @@ export default function MeditationTimerButton({ lotAnimation, totalTime, color, 
     function timerStart() {
         const interval = setInterval(() => {
             setSecondsLeft(secondsLeft => {
-                if (secondsLeft > 0)
+                if (secondsLeft > 0){
                     return secondsLeft - 1;
-                else {
-                    soundState.stopAsync();
+                }else {
+                    soundState.pauseAsync();
                     return 0;
                 }
             });
