@@ -11,8 +11,9 @@ const styles = StyleSheet.create({
     },
     text: {
         color: 'white',
-        fontSize: 30,
+        fontSize: 40,
         fontFamily: 'OleoScript-Regular',
+        marginBottom: 50
     },
     timerContainer: {
         flexDirection: "row",
@@ -64,6 +65,48 @@ const styles = StyleSheet.create({
     space: {
       width: 20,
       height: 30,
+    },
+    quoteText:{
+      fontSize: 20,
+      color: 'white'
+    },
+    logo: {
+      width: 200,
+      height: 200,
+      marginTop: 50
+    },
+    quoteTextQ: {
+      fontSize: 16,
+      color: 'white',
+      justifyContent: 'center',
+      paddingLeft: 50,
+      paddingRight: 50,
+      marginBottom: 20,
+      fontStyle: 'italic'
+    },
+    quoteTextA: {
+      color: 'white',
+      justifyContent: 'center',
+      paddingLeft: 50,
+      paddingRight: 50,
+      marginBottom: 20,
+    },
+    homeHead:{
+      color: '#e0ab78',
+      fontSize: 40,
+      fontFamily: 'OleoScript-Regular',
+      marginBottom: 20,
+      marginTop: 10
+    },
+    homeButton:{
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 4,
+      elevation: 3,
+      backgroundColor: '#AEA488',
+      marginBottom: 150
     }
 });
 

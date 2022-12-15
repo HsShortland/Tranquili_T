@@ -1,21 +1,16 @@
-import {Button} from "react-native";
-import React, {useState} from 'react';
+import { Button } from "react-native";
+import React, { useState, useRef } from 'react';
 
-
-const TIME = 600;
-
-export default function TenMinuteTimer(){
+export default function MeditationTimerButton({ lotAnimation, totalTime, color }) {
     // time
-    const [secondsLeft, setSecondsLeft] = useState(TIME);
+    const [secondsLeft, setSecondsLeft] = useState(totalTime);
 
 
-    function tenStart() {
+    function timerStart() {
         const interval = setInterval(() => {
             setSecondsLeft(secondsLeft => (secondsLeft > 0) ? secondsLeft - 1 : 0);
         }, 1000);
     };
-
-
 
     const clockIt = () => {
         let mins = Math.floor((secondsLeft / 60) % 60);
@@ -29,17 +24,15 @@ export default function TenMinuteTimer(){
         };
     };
 
-
-
     const { displayMins, displaySeconds } = clockIt();
 
     return (
 
         <Button
             title={`${displayMins} Mins ${displaySeconds} Secs`}
-            disabled={ TIME != secondsLeft } 
-            onPress={() => { tenStart(); }}
-            color= '#79a1b1'>
+            disabled={totalTime != secondsLeft}
+            onPress={() => { timerStart(); lotAnimation.current?.play(); }}
+            color={color}>
         </Button >
     )
 
